@@ -1,6 +1,6 @@
 {
   "name": "react-ant-form-wrapper",
-  "version": "1.0.3",
+  "version": "1.0.2",
   "description": "This library is used as a lightweight alternative for ant design libraries form elements with validation like formik",
   "author": "Mohammad-Faisal",
   "license": "MIT",
