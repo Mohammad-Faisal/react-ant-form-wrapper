@@ -1,6 +1,6 @@
 import { DatePicker, Form } from 'antd'
 import React, { useContext } from 'react'
-import { FormContext } from './FormContext'
+import FormContext from './FormContext'
 
 declare type SizeType = 'small' | 'middle' | 'large' | undefined
 
@@ -31,9 +31,7 @@ export default function FormInputMonthPicker(props: Props) {
     >
       <MonthPicker
         format='MM/YYYY'
-        onChange={(_date, dateString) =>
-          control.handleInputChange(props.name, dateString)
-        }
+        onChange={(_date, dateString) => control.handleInputChange(props.name, dateString)}
         disabled={disabled}
         placeholder={placeholder}
         size={size}

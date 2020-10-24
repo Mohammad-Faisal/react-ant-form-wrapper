@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { FormContext } from './FormContext'
+import FormContext from './FormContext'
 import { Form, Input } from 'antd'
 
 interface Props {
@@ -15,15 +15,7 @@ interface Props {
 export default function FormInputText(props: Props) {
   const control = useContext(FormContext)
 
-  const {
-    name,
-    label,
-    isControlledManually,
-    manualValue,
-    disabled,
-    placeholder,
-    rows
-  } = props
+  const { name, label, isControlledManually, manualValue, disabled, placeholder, rows } = props
 
   const isTouched = control.touched[`${name}`]
   const error = control.errors[`${name}`]
@@ -33,15 +25,7 @@ export default function FormInputText(props: Props) {
     <Form.Item
       label={label}
       hasFeedback
-      validateStatus={
-        isTouched
-          ? error
-            ? 'error'
-            : value && value.length > 0
-            ? 'success'
-            : ''
-          : ''
-      }
+      validateStatus={isTouched ? (error ? 'error' : value && value.length > 0 ? 'success' : '') : ''}
       help={isTouched ? error : ''}
     >
       <Input.TextArea

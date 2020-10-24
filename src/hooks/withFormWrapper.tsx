@@ -1,25 +1,18 @@
 import React from 'react'
 import useFormInputValidation from './useFormInputValidation'
-import { FormContext } from '../components/FormContext'
+import FormContext from '../components/FormContext'
+import { ObjectSchema } from 'yup'
 
-export default function withForm(
-  FormComponent: any,
-  INITIAL_STATE: any,
-  VALIDATION_SCHEMA: any
-) {
-  return (props: any) => {
-    const { control, values } = useFormInputValidation(
-      INITIAL_STATE,
-      VALIDATION_SCHEMA
-    )
+export default function withForm(FormComponent: any, INITIAL_STATE: object, VALIDATION_SCHEMA: ObjectSchema) {
+    return (props: any) => {
+        const { control, values, resetData } = useFormInputValidation(INITIAL_STATE, VALIDATION_SCHEMA)
 
-    // useEffect( () => control.resetData() , [triggerClear] );
+        // useEffect( () => control.resetData() , [triggerClear] );
 
-    // @ts-ignore
-    return (
-      <FormContext.Provider value={control}>
-        <FormComponent control={control} values={values} {...props} />
-      </FormContext.Provider>
-    )
-  }
+        return (
+            <FormContext.Provider value={control}>
+                <FormComponent control={control} resetData={resetData} values={values} {...props} />
+            </FormContext.Provider>
+        )
+    }
 }

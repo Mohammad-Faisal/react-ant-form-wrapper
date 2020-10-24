@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Button } from 'antd'
-import { FormContext } from './FormContext'
+import FormContext from './FormContext'
 import { CheckOutlined } from '@ant-design/icons'
 
 interface Props {
