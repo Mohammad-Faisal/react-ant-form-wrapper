@@ -2,39 +2,49 @@ import {
     withFormWrapper,
     FormInputDatePicker,
     FormInputText,
-    FormSubmitButton,
     FormInputMonthPicker,
     FormInputTextArea,
-    FormInputDateRangePicker
+    FormInputDateRangePicker,
+    ValidationConstants
 } from 'react-ant-form-wrapper'
 import React from 'react'
 import * as Yup from 'yup'
+import { Button } from 'antd'
 
 const INITIAL_STATE = {
-    name: ''
+    name: '',
+    mobileNumber: '',
+    email: '',
+    amount: ''
 }
 
 const VALIDATION_SCHEMA = Yup.object({
-    name: Yup.string().required('Name is required')
+    name: Yup.string().required('Name is required'),
+    mobileNumber: ValidationConstants.REQUIRED_VALID_MOBILE_NUMBER,
+    email: ValidationConstants.REQUIRED_VALID_EMAIL,
+    amount: ValidationConstants.DIGIT_ONLY
 })
 
-const FormComponentExample: React.FC = (props) => {
-    //const control = useContext(FormContext)
+const FormComponentExample: React.FC = (props: any) => {
     const handleSubmit = () => {
-        // console.log(props.values)
-        console.log(props)
-        // console.log(props.values)
-        // props.control.resetData()
+        console.log(props.values)
+    }
+    const clearForm = () => {
+        props.resetData()
     }
 
     return (
         <div style={{ margin: '20px' }}>
             <FormInputText name='name' label='Name' />
+            <FormInputText name='mobileNumber' label='Mobile Number' />
+            <FormInputText name='email' label='Email Address' />
+            <FormInputText name='amount' label='Amount' />
             <FormInputTextArea name='description' label='Description' />
             <FormInputMonthPicker name='month' label='Select Month' />
             <FormInputDatePicker name='date' label='Select Date' />
             <FormInputDateRangePicker name='dateRange' label='Select Date Range' />
-            <FormSubmitButton onSubmit={handleSubmit} />
+            <Button onClick={clearForm}> Clear form </Button>
+            <Button onClick={handleSubmit}> Submit form </Button>
         </div>
     )
 }
