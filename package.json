@@ -1,6 +1,6 @@
 {
   "name": "react-ant-form-wrapper",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "This library is used as a lightweight alternative for ant design libraries form elements with validation like formik",
   "author": "Mohammad-Faisal",
   "license": "MIT",
@@ -34,6 +34,7 @@
     "@types/node": "^12.12.38",
     "@types/react": "^16.9.27",
     "@types/react-dom": "^16.9.7",
+    "@types/yup": "^0.29.8",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
     "babel-eslint": "^10.0.3",
@@ -62,7 +63,6 @@
   ],
   "dependencies": {
     "@ant-design/icons": "^4.2.2",
-    "@types/yup": "^0.29.8",
     "antd": "^4.7.2",
     "cogo-toast": "^4.2.3",
     "moment": "^2.29.1",
