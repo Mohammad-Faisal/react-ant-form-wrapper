@@ -1,10 +1,10 @@
 import React from 'react'
-
-import { ExampleComponent } from 'react-ant-form-wrapper'
+import 'antd/dist/antd.css';
+import  FormComponentExample  from './FormComponentExample'
 import 'react-ant-form-wrapper/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return <FormComponentExample />
 }
 
 export default App
