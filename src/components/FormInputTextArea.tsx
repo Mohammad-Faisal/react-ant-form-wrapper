@@ -5,7 +5,7 @@ import { Form, Input } from 'antd'
 interface Props {
   name: string
   label: string
-  rows: number
+  rows?: number
   isControlledManually?: boolean
   manualValue?: string
   disabled?: boolean

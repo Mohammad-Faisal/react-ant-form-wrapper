@@ -12,15 +12,15 @@ interface Props {
   size?: SizeType
 }
 
-const { MonthPicker } = DatePicker
-
-export default function FormInputMonthPicker(props: Props) {
+export default function FormInputDateRangePicker(props: Props) {
   const control = useContext(FormContext)
 
-  const { name, label, disabled, placeholder, size } = props
+  const { name, label, disabled, size } = props
 
   const isTouched = control.touched[`${name}`]
   const error = control.errors[`${name}`]
+
+  const { RangePicker } = DatePicker
 
   return (
     <Form.Item
@@ -29,13 +29,11 @@ export default function FormInputMonthPicker(props: Props) {
       validateStatus={isTouched ? (error ? 'error' : '') : ''}
       help={isTouched ? error : ''}
     >
-      <MonthPicker
-        format='MM/YYYY'
+      <RangePicker
         onChange={(_date, dateString) =>
           control.handleInputChange(props.name, dateString)
         }
         disabled={disabled}
-        placeholder={placeholder}
         size={size}
       />
     </Form.Item>

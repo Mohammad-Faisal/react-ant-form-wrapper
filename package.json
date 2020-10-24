@@ -61,9 +61,11 @@
     "dist"
   ],
   "dependencies": {
+    "@ant-design/icons": "^4.2.2",
     "@types/yup": "^0.29.8",
     "antd": "^4.7.2",
     "cogo-toast": "^4.2.3",
+    "moment": "^2.29.1",
     "yup": "^0.29.3"
   }
 }

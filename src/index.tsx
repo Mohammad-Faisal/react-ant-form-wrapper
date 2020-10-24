@@ -9,6 +9,9 @@
 // }
 
 export { default as FormInputText } from './components/FormInputText'
+export { default as FormInputTextArea } from './components/FormInputTextArea'
 export { default as FormSubmitButton } from './components/FormSubmitButton'
 export { default as FormInputMonthPicker } from './components/FormInputMonthPicker'
+export { default as FormInputDatePicker } from './components/FormInputDatePicker'
+export { default as FormInputDateRangePicker } from './components/FormInputDateRangePicker'
 export { default as withFormWrapper } from './hooks/withFormWrapper'
